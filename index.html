@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <nav>
+            <h2>Productivity Dashboard</h2>
+            <button id="theme"> Change Theme</button>
+        </nav>
+        <section class="header">
+
+            <!-- <h2>this is the header section</h2> -->
+        </section>
+
+        <section class="allElems">
+            <div class="elem" id="0">
+                <img src="https://i.pinimg.com/736x/07/b3/e9/07b3e93fb91515298e1ef76ae927077d.jpg" alt="">
+
+                <h3>ToDo List </h3>
+            </div>
+            <div class="elem" id="1">
+                <img src="https://i.pinimg.com/736x/2b/f4/a9/2bf4a9a5f2fc1781376b942758a4a6a9.jpg" alt="">
+
+                <h3>Daily Planner</h3>
+            </div>
+            <div class="elem" id="2">
+                <img src="https://i.pinimg.com/736x/42/d9/f5/42d9f55012b192fdd413f8ff30953cbc.jpg" alt="">
+
+                <h3>Motivation</h3>
+            </div>
+            <div class="elem" id="3">
+                <img src="https://i.pinimg.com/1200x/b6/39/2c/b6392ca10cb62e964e6d025f05e9c31c.jpg" alt="">
+
+                <h3>Pomodoro Timer</h3>
+            </div>
+            <div class="elem" id="4">
+                <img src="https://i.pinimg.com/736x/f2/d8/8e/f2d88ebdd73e6079265359a40fdf79c7.jpg" alt="">
+                <h3>Daily Goals</h3>
+            </div>
+        </section>
+
+    </main>
+    <section class="fullElem">
+        <div class="todo comelem" id="todo">
+            <h2>Heres' Your Task List</h2>
+            <button class="back-btn">Back</button>
+            <div class="inner-comelem">
+
+                <section class="todo-details">
+                    <form action="">
+                        <input type="text" placeholder="Enter Task">
+                        <textarea name="taskdetail" id="" placeholder="Enter Task Details"></textarea>
+                        <div class="task-imp">
+                            <input type="checkbox" name="task-imp" id="imp-task">
+                            <label for="imp-task">Mark as Important!!!</label>
+                        </div>
+                        <button class="task-add" type="submit">Add Task</button>
+                    </form>
+                </section>
+                <section class="todolist">
+                    <div class="all-tasks">
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <div class="dailyplanner comelem" id="dp">
+            <div class="inner-comelem">
+
+                <h2>Dailyplanner</h2>
+                <button class="back-btn">Back</button>
+            </div>
+
+        </div>
+        <div class="motivation comelem" id="moti">
+            <div class="inner-comelem">
+
+                <h2>Motivation</h2>
+                <button class="back-btn">Back</button>
+            </div>
+
+        </div>
+        <div class="pomodoro comelem" id="pomo">
+            <div class="inner-comelem">
+
+                <h2>Pomodoro</h2>
+                <button class="back-btn">Back</button>
+            </div>
+
+        </div>
+        <div class="dailygoals comelem" id="dg">
+            <div class="inner-comelem">
+
+                <h2>DailyGoals</h2>
+                <button class="back-btn">Back</button>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
