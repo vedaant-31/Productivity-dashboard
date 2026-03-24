@@ -24,40 +24,54 @@ var textAreaInput = document.querySelector('.todo-details form textarea');
 var taskImp = document.querySelector('.todo-details form .task-imp input');
 
 var currTask = [];
-if(localStorage.getItem('currTask')){
-    var alltask = localStorage.getItem(JSON.parse('currTask'));
+if (localStorage.getItem('task')) {
+    currTask = JSON.parse(localStorage.getItem('task'));
 }
-else{
-    console.log("List is Empty");
+else {
+    currTask = [];
+    
 }
-
-// Preventing Default submit Nature
-
-
 function rendertask() {
-    var task = document.querySelector('.todolist .all-tasks');
+    var taskContainer = document.querySelector('.todolist .all-tasks');
     var sum = '';
-    currTask.forEach(function (elem) {
+    currTask.forEach(function (elem, idx) {
         sum += `<div class="task">
         <h2>${elem.taskName}<span class='${elem.isImp}'>imp</span></h2>
-        <button class="task-complete">Mark as Complete</button>
+        <button class="task-complete" id='${idx}'>Mark as Complete</button>
         </div>`
-    })
+    });
+    taskContainer.innerHTML = sum;
+    localStorage.setItem('task', JSON.stringify(currTask));
     
-    task.innerHTML = sum;
+    var taskCompBtn = document.querySelectorAll('.task-complete');
+    taskCompBtn.forEach(function (e) {
+        e.addEventListener('click', function () {
+            currTask.splice(e.id, 1)
+            rendertask();
+        })
+    })
+
 }
+
+rendertask();
+
 todoSubmit.addEventListener('click', function (e) {
     e.preventDefault();
     currTask.push({
-        taskName:taskinput.value,
-        taskDetail:textAreaInput.value,
-        isImp:taskImp.checked,
-    })
+
+        taskName: taskinput.value,
+        taskDetail: textAreaInput.value,
+        isImp: taskImp.checked,
+    });
     localStorage.setItem('task', JSON.stringify(currTask))
-    taskinput.value="";
-    textAreaInput.value="";
-    taskImp.checked=false;
-    
-    console.log(currTask);
+    taskinput.value = "";
+    textAreaInput.value = "";
+    taskImp.checked = false;
+
     rendertask();
 })
+
+
+
+
+
